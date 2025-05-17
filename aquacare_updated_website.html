@@ -1,10 +1,10 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AQUACARE WATER FILTER - Water Filtration & AC Services</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <style>
     body, html {
       margin: 0;
@@ -15,9 +15,8 @@
     }
     a { text-decoration: none; }
 
-    /* Header */
     header {
-      background: #f9f9f9;
+      background: #ffffff;
       padding: 20px 40px;
       display: flex;
       justify-content: space-between;
@@ -40,49 +39,36 @@
       margin-left: 20px;
     }
     nav ul li a {
-      color: #333;
+      color: #007bff;
       font-size: 18px;
       transition: color 0.3s;
     }
     nav ul li a:hover {
-      color: #007bff;
+      color: #0056b3;
     }
 
-    /* Hero Section */
+    /* Hero Section with Slideshow */
     .hero {
       height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      flex-direction: column;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
       background-size: cover;
       background-position: center;
-      animation: slideshow 20s infinite;
-      z-index: -1;
-    }
-    @keyframes slideshow {
-      0%   { background-image: url('hero1.jpg'); }
-      25%  { background-image: url('hero2.png'); }
-      50%  { background-image: url('hero3.jpg'); }
-      75%  { background-image: url('hero4.png'); }
-      100% { background-image: url('hero1.jpg'); }
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      transition: background-image 1s ease-in-out;
     }
     .hero h1 {
       font-size: 48px;
       text-shadow: 2px 2px 4px #000;
+      margin: 0;
     }
     .hero p {
       font-size: 24px;
+      margin-top: 10px;
       text-shadow: 1px 1px 3px #000;
     }
 
@@ -92,9 +78,15 @@
       background: #fff;
       margin-bottom: 20px;
     }
-    .half-bg {
-      background: #f1f1f1;
+    section.half-bg {
+      background: #eef1f5;
     }
+    section h2 {
+      font-size: 32px;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
     .services {
       display: flex;
       flex-wrap: wrap;
@@ -107,6 +99,10 @@
       border-radius: 8px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .service:hover {
+      transform: translateY(-5px);
     }
     .service img {
       width: 100%;
@@ -116,13 +112,15 @@
     .service h3 {
       margin: 15px 0 10px;
       color: #007bff;
+      font-size: 24px;
     }
     .service p {
       padding: 0 15px 15px;
       color: #555;
+      font-size: 16px;
     }
 
-    /* Contact Section */
+    /* Contact */
     #contact form {
       display: flex;
       flex-direction: column;
@@ -135,6 +133,7 @@
       max-width: 500px;
       border: 1px solid #ccc;
       border-radius: 4px;
+      font-size: 16px;
     }
     #contact button {
       padding: 10px 20px;
@@ -144,135 +143,168 @@
       border: none;
       border-radius: 4px;
       cursor: pointer;
+      font-size: 18px;
+      transition: background 0.3s;
+    }
+    #contact button:hover {
+      background: #005bb5;
+    }
+    #contact .contact-info {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+    #contact .contact-info a {
+      color: #007bff;
+      font-weight: bold;
     }
 
-    /* Customer Reviews */
+    /* WhatsApp Icon */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 999;
+    }
+    .whatsapp-float img {
+      height: 50px;
+      width: 50px;
+    }
+
+    /* Reviews */
     .reviews {
-      background: #e8f0fe;
+      background: #f0f8ff;
       padding: 40px 20px;
     }
     .review {
-      max-width: 600px;
+      max-width: 700px;
       margin: 20px auto;
-      background: #fff;
-      padding: 20px;
-      border-left: 4px solid #007bff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .review h4 {
-      margin: 0;
+      font-style: italic;
       color: #333;
-    }
-    .review p {
-      color: #666;
+      font-size: 18px;
     }
 
     /* Footer */
     footer {
       background: #222;
-      color: #ccc;
+      color: #fff;
       text-align: center;
+      font-size: 14px;
       padding: 20px;
     }
 
-    /* WhatsApp Icon */
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25d366;
-      color: white;
-      padding: 12px;
-      border-radius: 50%;
-      font-size: 24px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      z-index: 1000;
-    }
-
     @media (max-width: 768px) {
-      .hero h1 { font-size: 36px; }
-      .hero p { font-size: 18px; }
+      .hero h1 {
+        font-size: 36px;
+      }
+      .hero p {
+        font-size: 18px;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- WhatsApp Icon -->
+  <a href="https://wa.me/971542691211" class="whatsapp-float" target="_blank">
+    <img src="images/whatsapp-icon.png" alt="WhatsApp">
+  </a>
 
-<header>
-  <div class="logo">
-    <img src="logo.png" alt="AQUACARE Logo">
-  </div>
-  <nav>
-    <ul>
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#water-filters">Water Filters</a></li>
-      <li><a href="#ac-services">AC Services</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
-<section class="hero" id="hero">
-  <h1>Welcome to AQUACARE WATER FILTER</h1>
-  <p>Your trusted solution for water filtration and AC maintenance</p>
-</section>
-
-<section id="water-filters">
-  <h2>Water Filter Installation</h2>
-  <div class="services">
-    <div class="service">
-      <img src="ai-water-filter.png" alt="Water Filter Installation">
-      <h3>Water Filter Installation</h3>
-      <p>High-quality water filters installed by professionals to ensure clean water at all times.</p>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="AQUACARE Logo">
     </div>
-  </div>
-</section>
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#water-filters">Water Filters</a></li>
+        <li><a href="#ac-services">AC Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<section id="ac-services" class="half-bg">
-  <h2>AC Services</h2>
-  <div class="services">
-    <div class="service">
-      <img src="ai-ac-installation.png" alt="AC Installation">
-      <h3>AC Installation</h3>
-      <p>Efficient and reliable AC installation services by expert technicians.</p>
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <h1>Welcome to AQUACARE</h1>
+    <p>Your trusted solution for water filtration & AC maintenance</p>
+  </section>
+
+  <!-- Water Filters Section -->
+  <section id="water-filters">
+    <h2>Water Filter Installation</h2>
+    <div class="services">
+      <div class="service">
+        <img src="images/ai-water-filter.png" alt="Water Filter">
+        <h3>Water Filter Installation</h3>
+        <p>Expert installation of high-quality water filters to provide clean water for your home or office.</p>
+      </div>
     </div>
-    <div class="service">
-      <img src="ai-ac-service.png" alt="AC Cleaning">
-      <h3>AC Cleaning</h3>
-      <p>Thorough AC cleaning to keep your environment cool and fresh.</p>
+  </section>
+
+  <!-- AC Services -->
+  <section id="ac-services" class="half-bg">
+    <h2>AC Services</h2>
+    <div class="services">
+      <div class="service">
+        <img src="images/ai-ac-installation.png" alt="AC Installation">
+        <h3>AC Repair & Installation</h3>
+        <p>Skilled technicians offering reliable repair and installation services to keep you cool.</p>
+      </div>
+      <div class="service">
+        <img src="images/ai-ac-service.png" alt="AC Service">
+        <h3>AC Service Cleaning</h3>
+        <p>Professional cleaning services to extend the life and performance of your AC units.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="reviews">
-  <h2>What Our Customers Say</h2>
-  <div class="review">
-    <h4>Ali Raza</h4>
-    <p>Excellent water filter installation! Clean and professional work. Highly recommend.</p>
-  </div>
-  <div class="review">
-    <h4>Fatima K.</h4>
-    <p>The AC service was quick and effective. My home feels so much better. Thank you Aquacare!</p>
-  </div>
-</section>
+  <!-- Customer Reviews -->
+  <section class="reviews">
+    <h2>What Our Customers Say</h2>
+    <div class="review">"AQUACARE team is very professional. Installed water filter system quickly!" – Ahmed K.</div>
+    <div class="review">"Excellent AC service and polite staff. Highly recommended!" – Fatima R.</div>
+    <div class="review">"Reliable and affordable. My go-to for water purification." – Sameer M.</div>
+  </section>
 
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p>Call us: <a href="tel:+971542691211">+971542691211</a> | WhatsApp: <a href="https://wa.me/971542691211">+971542691211</a></p>
-  <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+      <p>Call us: <a href="tel:+971542691211">+971542691211</a></p>
+      <p>WhatsApp: <a href="https://wa.me/971542691211" target="_blank">+971542691211</a></p>
+    </div>
+    <p>If you have any questions or need our services, please reach out to us using the form below:</p>
+    <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
 
-<a class="whatsapp" href="https://wa.me/971542691211" target="_blank">
-  <i class="fab fa-whatsapp"></i>
-</a>
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 AQUACARE WATER FILTER. All rights reserved.
+  </footer>
 
-<footer>
-  &copy; 2025 AQUACARE WATER FILTER. All rights reserved.
-</footer>
+  <!-- JavaScript for Hero Slideshow -->
+  <script>
+    const hero = document.querySelector('.hero');
+    const heroImages = [
+      'images/hero1.jpg',
+      'images/hero2.jpg',
+      'images/hero3.jpg',
+      'images/hero4.jpg'
+    ];
+    let currentIndex = 0;
 
+    function changeHeroImage() {
+      currentIndex = (currentIndex + 1) % heroImages.length;
+      hero.style.backgroundImage = `url('${heroImages[currentIndex]}')`;
+    }
+
+    hero.style.backgroundImage = `url('${heroImages[0]}')`;
+    setInterval(changeHeroImage, 5000);
+  </script>
 </body>
 </html>
