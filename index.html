@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AQUACARE WATER FILTER</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <style>
@@ -10,208 +10,216 @@
       margin: 0;
       padding: 0;
       font-family: 'Roboto', sans-serif;
-      background: #f1f1f1; /* Light background to contrast blue logo */
+      background: #f0f4f8;
       scroll-behavior: smooth;
     }
-
     header {
-      background: #004080;
-      padding: 20px 40px;
+      background: #ffffff;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 10px 30px;
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-
-    header .logo img {
-      height: 70px;
+    .logo img {
+      height: 60px;
     }
-
     nav ul {
       list-style: none;
       display: flex;
       margin: 0;
       padding: 0;
     }
-
     nav ul li {
       margin-left: 20px;
     }
-
     nav ul li a {
-      color: #fff;
-      font-size: 18px;
+      color: #333;
       text-decoration: none;
+      font-size: 18px;
     }
-
     nav ul li a:hover {
-      text-decoration: underline;
+      color: #007bff;
     }
-
-    .hero {
+    .hero-slider {
       height: 80vh;
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      color: white;
       position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-
-    .hero h1 {
-      font-size: 48px;
-      text-shadow: 2px 2px 5px black;
+    .hero-img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-
-    .hero p {
-      font-size: 24px;
-      text-shadow: 1px 1px 3px black;
+    .hero-text {
+      position: relative;
+      z-index: 10;
+      color: #fff;
+      text-shadow: 2px 2px 4px #000;
+      text-align: center;
     }
-
     section {
       padding: 60px 20px;
       text-align: center;
     }
-
+    h2 {
+      color: #007bff;
+      margin-bottom: 30px;
+    }
     .services {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
     }
-
     .service {
       width: 300px;
-      margin: 15px;
-      background: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin: 20px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       border-radius: 8px;
       overflow: hidden;
     }
-
     .service img {
       width: 100%;
       height: 200px;
       object-fit: cover;
     }
-
     .service h3 {
-      color: #004080;
+      margin: 15px 0 10px;
+      color: #007bff;
     }
-
-    .contact-info a {
-      color: #004080;
+    .service p {
+      padding: 0 15px 15px;
     }
-
+    #contact input, #contact textarea {
+      width: 80%;
+      max-width: 500px;
+      padding: 10px;
+      margin: 10px auto;
+      display: block;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    #contact button {
+      padding: 10px 20px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
     footer {
       background: #222;
       color: #fff;
-      padding: 20px;
       text-align: center;
-    }
-
-    /* Customer Review */
-    .review {
-      background: #e6f2ff;
-      margin: 20px auto;
-      max-width: 700px;
       padding: 20px;
-      border-left: 5px solid #004080;
     }
-
-    /* WhatsApp Floating Icon */
-    .whatsapp {
+    .whatsapp-icon {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      z-index: 9999;
-    }
-
-    .whatsapp img {
+      background: #25D366;
       width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .whatsapp-icon img {
+      width: 30px;
     }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">
-      <img src="images/logo.jpg" alt="Aquacare Logo">
+      <img src="logo.jpg" alt="Logo">
     </div>
     <nav>
       <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#water-filters">Water Filters</a></li>
-        <li><a href="#ac-services">AC Services</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#services">Services</a></li>
         <li><a href="#reviews">Reviews</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="hero" id="hero">
-    <h1>Welcome to Aquacare</h1>
-    <p>Trusted Water Filter & AC Experts</p>
-  </section>
+  <div class="hero-slider">
+    <img src="hero1.jpg" class="hero-img" style="display:block;">
+    <img src="hero2.png" class="hero-img" style="display:none;">
+    <img src="hero3.jpg" class="hero-img" style="display:none;">
+    <img src="hero4.png" class="hero-img" style="display:none;">
+    <div class="hero-text">
+      <h1>Welcome to AQUACARE</h1>
+      <p>Water Filtration & AC Services</p>
+    </div>
+  </div>
 
-  <section id="water-filters">
-    <h2>Water Filter Installation</h2>
+  <section id="services">
+    <h2>Our Services</h2>
     <div class="services">
       <div class="service">
         <img src="ai-water-filter.png" alt="Water Filter">
-        <h3>High Quality Filters</h3>
-        <p>Clean, safe and reliable water for your home or office.</p>
+        <h3>Water Filter Installation</h3>
+        <p>High quality water filtration systems for your home or office.</p>
       </div>
-    </div>
-  </section>
-
-  <section id="ac-services">
-    <h2>AC Services</h2>
-    <div class="services">
       <div class="service">
-        <img src="ai-ac-installation.png" alt="AC Install">
-        <h3>AC Installation</h3>
-        <p>Fast and professional AC installation services.</p>
+        <img src="ai-ac-installation.png" alt="AC Installation">
+        <h3>AC Installation & Repair</h3>
+        <p>Professional air conditioner installation and repair services.</p>
       </div>
       <div class="service">
         <img src="ai-ac-service.png" alt="AC Service">
-        <h3>AC Maintenance</h3>
-        <p>Keep your AC running smooth with our expert maintenance.</p>
+        <h3>AC Cleaning</h3>
+        <p>Deep cleaning to keep your AC running efficiently and clean.</p>
       </div>
     </div>
   </section>
 
   <section id="reviews">
     <h2>Customer Reviews</h2>
-    <div class="review">
-      <p>"Aquacare's service was excellent. They installed the filter on time and with professionalism. Highly recommend!"</p>
-      <strong>- Ahmed R.</strong>
-    </div>
-    <div class="review">
-      <p>"Very clean and fast AC repair work. Friendly staff and reasonable price."</p>
-      <strong>- Fatima K.</strong>
-    </div>
+    <p><strong>Ali R.</strong>: "Great service! My filter was installed perfectly."</p>
+    <p><strong>Sana K.</strong>: "AC service was fast and clean. Highly recommend!"</p>
+    <p><strong>Mohammed A.</strong>: "Excellent support and quality filters!"</p>
   </section>
 
   <section id="contact">
     <h2>Contact Us</h2>
-    <div class="contact-info">
-      <p>Call us: <a href="tel:+971542691211">+971 54 269 1211</a></p>
-      <p>WhatsApp: <a href="https://wa.me/971542691211" target="_blank">+971 54 269 1211</a></p>
-    </div>
+    <form>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p>Call or WhatsApp: <a href="https://wa.me/971542691211">+971542691211</a></p>
   </section>
 
   <footer>
-    &copy; 2025 Aquacare Water Filter. All Rights Reserved.
+    &copy; 2025 AQUACARE WATER FILTER. All rights reserved.
   </footer>
 
-  <div class="whatsapp">
-    <a href="https://wa.me/971542691211" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    </a>
-  </div>
+  <a class="whatsapp-icon" href="https://wa.me/971542691211" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+  <script>
+    const slides = document.querySelectorAll('.hero-img');
+    let index = 0;
+    setInterval(() => {
+      slides[index].style.display = 'none';
+      index = (index + 1) % slides.length;
+      slides[index].style.display = 'block';
+    }, 5000);
+  </script>
 </body>
 </html>
