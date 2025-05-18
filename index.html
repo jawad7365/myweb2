@@ -139,51 +139,73 @@
     }
       /* --- Responsive Mobile Layout --- */
   @media (max-width: 768px) {
-    header {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 10px 20px;
-    }
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
 
-    nav ul {
-      flex-direction: column;
-      width: 100%;
-    }
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
 
-    nav ul li {
-      margin: 10px 0;
-    }
+  nav ul li {
+    margin: 5px 10px;
+  }
 
-    .hero-text h1 {
-      font-size: 24px;
-    }
+  nav ul li a {
+    font-size: 16px;
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
 
-    .hero-text p {
-      font-size: 16px;
-    }
+  nav ul li a:hover {
+    background: #007bff;
+    color: white;
+  }
 
-    .services {
-      flex-direction: column;
-      align-items: center;
-    }
+  .hero-text h1 {
+    font-size: 24px;
+  }
 
-    .service {
-      width: 90%;
-      margin: 10px 0;
-    }
+  .hero-text p {
+    font-size: 16px;
+  }
 
-    #contact input,
-    #contact textarea {
-      width: 95%;
-    }
+  .services {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .whatsapp-icon {
-      width: 45px;
-      height: 45px;
-    }
+  .service {
+    width: 90%;
+    margin: 10px 0;
+  }
 
-    .whatsapp-icon img {
-      width: 26px;
+  #contact input,
+  #contact textarea {
+    width: 95%;
+  }
+
+  .whatsapp-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .whatsapp-icon img {
+    width: 26px;
+  }
+}
     }
   }
   </style>
