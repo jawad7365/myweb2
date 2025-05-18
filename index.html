@@ -137,6 +137,55 @@
     .whatsapp-icon img {
       width: 30px;
     }
+      /* --- Responsive Mobile Layout --- */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px 20px;
+    }
+
+    nav ul {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    nav ul li {
+      margin: 10px 0;
+    }
+
+    .hero-text h1 {
+      font-size: 24px;
+    }
+
+    .hero-text p {
+      font-size: 16px;
+    }
+
+    .services {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .service {
+      width: 90%;
+      margin: 10px 0;
+    }
+
+    #contact input,
+    #contact textarea {
+      width: 95%;
+    }
+
+    .whatsapp-icon {
+      width: 45px;
+      height: 45px;
+    }
+
+    .whatsapp-icon img {
+      width: 26px;
+    }
+  }
   </style>
 </head>
 <body>
